@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Claimed</title>
+  <title>Notifications</title>
 
   <!-- Custom fonts for this template -->
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -95,8 +95,8 @@
               </div>
             </li>
 
-            
-            
+
+
 
 
             <!-- Nav Item - User Information -->
@@ -113,10 +113,10 @@
            <div class="container-fluid">
 
           <!-- Page Heading -->
-          
+
         </div>
 
-          
+
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">

@@ -55,24 +55,24 @@
                     <div class="form-group">
                       <input type="text" class="form-control form-control-user" name="username" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Username...">
                     </div>
-                 
+
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" name="password" id="exampleInputPassword" placeholder="Password">
                     </div>
-                    
+
                     <div class="form-group">
                     </div>
                     <button type="submit" class="btn btn-primary btn-user btn-block">
                       Login
                     </button>
                     <hr>
-                    <center><a href='register' class="RegisterAcct">
+                    <!--<center><a href='register' class="RegisterAcct">
                       Register Account
-                    </a></center>
-                    
-                    <div class="text-center">
+                    </a></center>-->
+
+                    <!--<div class="text-center">
                       <a class="small" href='forgotpassword'>Forgot your password? Click Here</a>
-                    </div>
+                    </div>-->
                   </form>
                 </div>
               </div>

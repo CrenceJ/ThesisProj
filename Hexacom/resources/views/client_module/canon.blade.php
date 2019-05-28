@@ -54,7 +54,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-       
+
 
       @include('client_module.includes.nav')
 
@@ -63,7 +63,7 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        
+
       </div>
 
       <!-- Sidebar Toggler (Sidebar) -->
@@ -115,9 +115,9 @@
               </div>
             </li>
 
-            
 
-            
+
+
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
@@ -237,7 +237,7 @@
             		<input id="email"  placeholder="jdoe@gmail.com" class="form-control">
             	</div>
             </div>
-            
+
 
             <div class="form-group col-md-4">
             	<label for="inputState">Phone</label>
@@ -287,10 +287,10 @@
         <br>
     </div>
 </div>
-            
+
 
             <!--end of forms-->
-            
+
           </div>
         </div>
       </div>
@@ -378,7 +378,7 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.min.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
 
-  
+
 
   <script  src="js/index.js"></script>
 

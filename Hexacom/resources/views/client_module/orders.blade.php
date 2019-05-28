@@ -10,7 +10,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="author" content="">
 
-  <title>System Orders</title>
+  <title>Orders</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,7 +47,7 @@
     @include('client_module.includes.nav')
 
         <hr class="sidebar-divider">
-      
+
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -97,8 +97,8 @@
               </div>
             </li>
 
-            
-            
+
+
 
 
             <!-- Nav Item - User Information -->
@@ -108,12 +108,12 @@
 
         </nav>
         <!-- End of Topbar -->
-   
+
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          
+
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -155,7 +155,7 @@
 
       </div>
       <!-- End of Main Content -->
-     
+
 
       <!-- basic modal for warranty items-->
       @foreach($orders as $order)
@@ -171,8 +171,8 @@
             <div class="modal-body">
             <table class="table">
             <tr>
-               <th> Items </th> 
-               <th>&nbsp;   </th> 
+               <th> Items </th>
+               <th>&nbsp;   </th>
                 <th> Cost </th>
             </tr>
             <?php $cost = 0; ?>
@@ -243,7 +243,7 @@
       </div>
     </div>
   </div>
-  
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="/vendor/jquery/jquery.min.js"></script>
@@ -284,7 +284,7 @@
 <script>
 
   function itemCost(id){
- 
+
         $.ajax({
         url     : '/itemsCostAjax',
         type  : 'post',
@@ -305,7 +305,7 @@
           }
 
           html += 'Total Cost ' + data['cost'];
-          
+
         document.getElementById('items-cost-container').innerHTML = html;
 
         }

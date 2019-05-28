@@ -70,13 +70,39 @@
       </div>
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-          <li class="active"><a href="/service_engineer"><i class="fa fa-bullseye"></i> Dashboard</a></li>
+          <li><a href="/service_engineer"><i class="fa fa-bullseye"></i> Dashboard</a></li>
           <li><a href='services'><i class="fa fa-tasks"></i> Services</a></li>
           <li><a href='sales'><i class="fa fa-globe"></i> Sales</a></li>
-          <li><a href='inventory'><i class="fa fa-list-ul"></i> Inventory</a></li>
-          <li><a href='settings'><i class="fa fa-list-ul"></i> Orders</a></li>
+          <li class="active"><a href='inventory'><i class="fa fa-list-ul"></i> Inventory</a></li>
+          <li class="nav-item">
+              <a class="nav-link collapse fa fa-list-ul" href="#" data-toggle="collapse" data-target="#collapseOrders" aria-expanded="true" aria-controls="collapseOrders">
+                  <i class=""></i>
+                  <span>Orders</span>
+              </a>
+              <div id="collapseOrders" class="collapse" aria-labelledby="headingOrders" data-parent="#accordionSidebar">
+                  <div>
+                      <div><a class="collapse-item btn" href='/orders'>System Orders</a></div>
+                      <div><a class="collapse-item btn" href='/ordersreq'>Requested Orders</a></div>
+                  </div>
+              </div>
+          </li>
+
+
           <li><a href='purchase-parts'><i class="fa fa-list-ul"></i> Purchase Parts</a></li>
-          <li><a href='settings'><i class="fa fa-list-ul"></i> Notifications</a></li>
+
+          <li class="nav-item">
+              <a class="nav-link collapsed fa fa-list-ul" href="#" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="true" aria-controls="collapseNotifications">
+                  <i class=""></i>
+                  <span>Notifications</span><span style="color:#ff6666;"> ({{$currentUser['notif']}})</span>
+              </a>
+              <div id="collapseNotifications" class="collapse" aria-labelledby="headingNotifications" data-parent="#accordionSidebar">
+                  <div>
+                      <div><a class="collapse-item btn" href='/notifications'>Claimed</a></div>
+                      <div><a class="collapse-item btn" href='/announcement'>Announcements</a></div>
+                  </div>
+              </div>
+          </li>
+
           <li><a href='reports'><i class="fa fa-list-ul"></i> Reports</a></li>
         </ul>
 
