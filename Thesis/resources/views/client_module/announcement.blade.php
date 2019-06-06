@@ -177,7 +177,7 @@
 													<form action='/deleteann' method="POST">
 														{{ csrf_field()}}
 														<input hidden name="annid" value="{{$announcement->announce_id}}">
-														<button class="btn btn-danger btn-xs" type="submit"><span class="fas fa-trash"></span></button>
+														<button class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></span></button>
 
 
 													</form>

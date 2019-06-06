@@ -71,10 +71,11 @@
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
                 <li><a href='index'><i class="fa fa-bullseye"></i> Dashboard</a></li>
+                <li class="services"><a href='allServices'><i class="fa fa-wrench" aria-hidden="true"></i> Services</a></li>
                 <li><a href='posts'><i class="fa fa-tasks"></i> Inventory</a></li>
                 <li class="active"><a href='salesRecord'><i class="fa fa-globe"></i> Sales Records</a></li>
                 <li><a href='replacement'><i class="fa fa-list-ul"></i> Replacement Forms</a></li>
-                <li><a href='settings'><i class="fa fa-list-ul"></i> Settings</a></li>
+                <li><a href='settings'><i class="fa fa-cog" aria-hidden="true"></i></i> Settings</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right navbar-user">
                   <li class="dropdown messages-dropdown">

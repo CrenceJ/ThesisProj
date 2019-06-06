@@ -158,9 +158,14 @@
     @include('Admin.includes.user_info')
     <br>
     <div id="page-wrapper">
-      <div class="container text-right">
+      <br>
+      <br>
+      <div class="text-right">
   <a href='services'><button type="button" class="btn btn-primary d-inline">&laquo; Back</button></a>
 </div>
+<br>
+<br>
+<br>
 <br>
 
 
