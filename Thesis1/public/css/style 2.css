@@ -1,0 +1,149 @@
+body {
+  background-color: #F2F2F2;
+}
+
+#file_target img {
+  width: 100%;
+  height: 450px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#venue_target img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.input-group-addon > .material-icons {
+  font-size: 1.3rem;
+}
+
+#venue_map {
+  width: 100%;
+  height: 200px;
+  background-color: lavender;
+  border-radius: 4px;
+}
+
+.add-more{
+  border: 1px solid #acadb4;
+}
+
+*{font-family: 'Roboto', sans-serif;}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input:checked {
+  background: #40e0d0;
+}
+.option-input:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+.label {
+  display: block;
+  line-height: 40px;
+}
+
+#HelloWorld{
+    -webkit-appearance: none;
+  font-size: 1.5em;
+}
+#HelloWorld:focus{
+  outline: none;
+}
+#HelloWorld:before {
+  content: 'Yes';
+  padding: 5px;
+  color: green;
+  border: 1px solid black;
+  border-right: none;
+  text-decoration: line-through;
+}
+#HelloWorld:checked:before {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#HelloWorld:after {
+  content: 'No';
+  color: red;
+  padding: 5px;
+  font-weight: bold;
+  text-decoration: underline;
+  border: 1px solid black;
+  border-left: none;
+}
+
+#HelloWorld:checked:after {
+   font-weight: normal;
+  text-decoration: line-through;
+}
+Type a message...
+
