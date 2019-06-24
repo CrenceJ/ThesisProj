@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Build PC</title>
+  <title>Build A PC</title>
 
   <link rel="icon" href="../img/favicon.png" type="image/png" sizes="16x16">
 
@@ -93,7 +92,7 @@
           </li>
 
 
-          <li class="active"><a href='purchase-parts'><i class="fa fa-list-ul"></i> Purchase Parts</a></li>
+          <li class="active"><a href='/customize?order_type=pc'><i class="fa fa-list-ul"></i> Build A PC</a></li>
 
           <li class="nav-item">
             <a class="nav-link collapsed fa fa-list-ul" href="#" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="true" aria-controls="collapseNotifications">
@@ -112,34 +111,6 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right navbar-user">
-          <li class="dropdown messages-dropdown">
-            <!-- for drop down purposes-->
-            <ul class="dropdown-menu">
-              <li class="message-preview">
-                <a href="#">
-                  <span class="avatar"><i class="fa fa-bell"></i></span>
-                  <span class="message">Security alert</span>
-                </a>
-              </li>
-
-
-
-              <li class="divider"></li>
-              <li class="message-preview">
-                <a href="#">
-                  <span class="avatar"><i class="fa fa-bell"></i></span>
-                  <span class="message">Security alert</span>
-                </a>
-              </li>
-
-
-
-              <li class="divider"></li>
-              <li><a href="#">Go to Inbox <span class="badge">2</span></a></li>
-            </ul>
-          </li>
-
-
           <li class="dropdown user-dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ $currentUser['name'] }}</a>
             <ul class="dropdown-menu">
@@ -218,10 +189,6 @@
 
         </nav>
         <!-- End of Topbar -->
-
-        <div class="container-fluid text-right">
-          <a href='purchase-parts'><button type="button" class="btn btn-primary d-inline">&laquo; Back</button></a>
-        </div>
         <br>
 
         <!-- Begin Page Content -->
@@ -232,12 +199,13 @@
 
             <div class="card-body-forCustomize">
 
+
               <div class="form-row">
                 <div class="col-lg-5">
                   <form role="form">
                     <div class="form-group">
                       <label><strong>OR Number</strong></label>
-                      <input class="form-control">
+                      <input class="form-control" placeholder="0000">
                     </div>
                   </form>
                 </div>
@@ -247,8 +215,20 @@
                 <div class="col-lg-5">
                   <form role="form">
                     <div class="form-group">
+                      <label><strong>Phone</strong></label>
+                      <input name="contact" type="number" id="phone" data-plugin-maxlength maxlength="11"  placeholder="09123456789" class="form-control">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+              <div class="form-row">
+                <div class="col-lg-5">
+                  <form role="form">
+                    <div class="form-group">
                       <label><strong>First Name</strong></label>
-                      <input type="text" name="fname" class="form-control" id="inputFirstname" placeholder="First name" required>
+                      <input type="text" name="fname" class="form-control" id="inputFirstname" placeholder="Juan" required>
                     </div>
                   </form>
                 </div>
@@ -261,59 +241,72 @@
                   <form role="form">
                     <div class="form-group">
                       <label><strong>Last Name</strong></label>
-                      <input type="text" name="lname" class="form-control" id="inputLastname" placeholder="Last name" required>
+                      <input type="text" name="lname" class="form-control" id="inputLastname" placeholder="Dela Cruz" required>
                     </div>
                   </form>
                 </div>
               </div>
 
-              <div class="form-row">
-                <div class="col-lg-5">
-                  <form role="form">
-                    <div class="form-group">
-                      <label><strong>Phone</strong></label>
-                      <input name="contact" type="number" id="phone" data-plugin-maxlength maxlength="11"  placeholder="09532454000" class="form-control">
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
+
 
               <div class="col-lg-12">
+                <br>
                 <div class="panel panel-primary">
                   <div class="panel-heading">
                     <h3 class="panel-title">CHOOSE YOUR CORE COMPONENTS</h3>
                   </div>
                   <div class="panel-body">
+
                     <div class="form-group col-md-12">
-                      <label for="inputState"><strong>Processor (CPU)</strong></label>
+                      <label for="inputState"><strong>Motherboard</strong></label>
+                      <br>
                       <select id="inputState" class="form-control">
-                        <option selected>Choose...</option>
+                        <option selected>Asrock Fatality B360 Gaming K4</option>
+                        <option selected>Gigabyte H81M-DS2</option>
+                        <option selected>Asrock H81 Pro BTX R2</option>
+                        <option selected>LGA 1151v3</option>
+                        <option selected>AM4</option>
+                        <option selected>FM2+</option>
+                        <option selected>TR4</option>
+                        <option selected>LGA 2066</option>
                         <option selected>Choose...</option>
                       </select>
                     </div>
 
                     <div class="form-group col-md-12">
-                      <label for="inputState"><strong>Motherboard</strong></label>
+                      <label for="inputState"><strong>Processor (CPU)</strong></label>
+                      <br>
                       <select id="inputState" class="form-control">
+                        <option selected>Celeron G4900</option>
+                        <option selected>Core i3-8100</option>
+                        <option selected>Core i3-8350K</option>
+                        <option selected>Core i3-900F</option>
+                        <option selected>Core i5-8400</option>
+                        <option selected>Core i5-9400</option>
+                        <option selected>Core i7-8700</option>
+                        <option selected>Pentium G5400</option>
                         <option selected>Choose...</option>
                       </select>
+
                     </div>
 
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Memory (RAM)</strong></label>
+                      <br>
                       <select id="inputState" class="form-control">
+                        <option selected>DDR3</option>
+                        <option selected>DDR4</option>
+                        <option selected>DDR5</option>
                         <option selected>Choose...</option>
                       </select>
                     </div>
 
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Graphics/ Video Card</strong></label>
+                      <br>
                       <select id="inputState" class="form-control">
+                        <option selected>AMD</option>
+                        <option selected>Nvidia</option>
                         <option selected>Choose...</option>
                       </select>
                     </div>
@@ -331,6 +324,7 @@
                   <div class="panel-body">
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Operating System</strong></label>
+                      <br>
                       <select id="inputState" class="form-control">
                         <option selected>Choose...</option>
                       </select>

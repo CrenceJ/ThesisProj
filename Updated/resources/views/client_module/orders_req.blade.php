@@ -88,7 +88,7 @@
           </li>
 
 
-          <li><a href='purchase-parts'><i class="fa fa-list-ul"></i> Purchase Parts</a></li>
+          <li><a href='/customize?order_type=pc'><i class="fa fa-list-ul"></i> Build A PC</a></li>
 
           <li class="nav-item">
               <a class="nav-link collapsed fa fa-list-ul" href="#" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="true" aria-controls="collapseNotifications">
@@ -237,7 +237,7 @@
     @if($order2->order_status == 'Pending')
     Total Cost: <input type="number" name="cost">
     <input type="hidden" name="identifier" value='pending'>
-    <span style="display:block; text-align: -webkit-center"><button type="submit" class="btn btn-success"> Mark As Paid </button></span>
+    <hr><span style="display:block; text-align: -webkit-center"><button type="submit" class="btn btn-success"> Mark As Paid </button></span>
     @endif
       </div>
   </div>

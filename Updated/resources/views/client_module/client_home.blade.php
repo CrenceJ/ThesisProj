@@ -94,10 +94,7 @@
                     </div>
                 </div>
             </li>
-
-
-            <li><a href='purchase-parts'><i class="fa fa-list-ul"></i> Purchase Parts</a></li>
-
+            <li><a href='/customize?order_type=pc'><i class="fa fa-list-ul"></i> Build A PC</a></li>
             <li class="nav-item">
                 <a class="nav-link collapsed fa fa-list-ul" href="#" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="true" aria-controls="collapseNotifications">
                     <i class=""></i>
@@ -110,7 +107,6 @@
                     </div>
                 </div>
             </li>
-
             <li><a href='reports'><i class="fa fa-list-ul"></i> Reports</a></li>
           </ul>
 

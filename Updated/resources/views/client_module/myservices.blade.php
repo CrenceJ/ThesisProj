@@ -96,7 +96,7 @@
           </li>
 
 
-          <li><a href='purchase-parts'><i class="fa fa-list-ul"></i> Purchase Parts</a></li>
+          <li><a href='/customize?order_type=pc'><i class="fa fa-list-ul"></i> Build A PC</a></li>
 
           <li class="nav-item">
               <a class="nav-link collapsed fa fa-list-ul" href="#" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="true" aria-controls="collapseNotifications">
@@ -158,12 +158,12 @@
           <a href="/services"><button type="button" class="btn btn-primary d-inline">&laquo; Back</button></a>
         </div>
         <br>
-   
+
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          
+
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -221,7 +221,7 @@
 
       </div>
       <!-- End of Main Content -->
-     
+
 
       <!-- basic modal for warranty items-->
       @foreach($myServices as $service2)
@@ -344,7 +344,7 @@
       </div>
     </div>
   </div>
-  
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="/vendor/jquery/jquery.min.js"></script>
@@ -408,7 +408,7 @@
 
           html += '<span style="color: red"> Total Cost: ' + data['cost'] + "</span><br>" +
                     "<a href='/orders' class='btn btn-primary' > Go to orders </a>";
-          
+
         document.getElementById('items-cost-container'+id).innerHTML = html;
         }
     });

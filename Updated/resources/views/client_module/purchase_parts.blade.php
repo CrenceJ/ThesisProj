@@ -95,9 +95,7 @@
                 </div>
             </li>
 
-
-            <li class="active"><a href='purchase-parts'><i class="fa fa-list-ul"></i> Purchase Parts</a></li>
-
+            <li class="active"><a href='/customize?order_type=pc'><i class="fa fa-list-ul"></i> Build A PC</a></li>
             <li class="nav-item">
                 <a class="nav-link collapsed fa fa-list-ul" href="#" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="true" aria-controls="collapseNotifications">
                     <i class=""></i>

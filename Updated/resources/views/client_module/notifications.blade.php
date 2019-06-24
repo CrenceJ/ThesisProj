@@ -63,6 +63,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href='/service_engineer'>Home</a>
+
         <a class="navbar-brand">
           <span id="date_time"></span>
           <script type="text/javascript">window.onload = date_time('date_time');</script>
@@ -88,7 +89,7 @@
           </li>
 
 
-          <li><a href='purchase-parts'><i class="fa fa-list-ul"></i> Purchase Parts</a></li>
+          <li><a href='/customize?order_type=pc'><i class="fa fa-list-ul"></i> Build A PC</a></li>
 
           <li class="active" class="nav-item">
               <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNotifications" aria-expanded="true" aria-controls="collapseNotifications">
