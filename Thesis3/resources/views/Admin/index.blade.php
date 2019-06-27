@@ -90,7 +90,7 @@
               </a>
               <div id="collapseOrders" class="collapse" aria-labelledby="headingOrders" data-parent="#accordionSidebar">
                   <div>
-                      <div><a class="collapse-item btn" href='/orders'>Charge Invoice</a></div>
+                      <div><a class="collapse-item btn" href='/chargeInv'>Charge Invoice</a></div>
                       <div><a class="collapse-item btn" href='/ordersreq'>Cash Invoice</a></div>
                   </div>
               </div>

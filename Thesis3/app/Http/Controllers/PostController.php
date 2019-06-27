@@ -14,16 +14,23 @@ class PostController extends Controller
     {
          $currentUser = Helper::staticInfo();
 
-        $inventory = DB::table('inventory')
-        ->select('inventory_id', 'inventory_item','inventory_brand','inventory_model','inventory_socket','cost','inventory_serial_no','inventory_supplier','date_received','inventory_status','inventory_type','created_at','updated_at')->get();
-        return view('Admin.flashdrive',compact('inventory','currentUser'));
+         $invType = $_GET['type'];
+
+        // $inventory = DB::table('inventory')
+        // ->select('inventory_id', 'inventory_item','inventory_brand','inventory_model','inventory_socket','cost','inventory_serial_no','inventory_supplier','date_received','inventory_status','inventory_type','created_at','updated_at')->get();
+        // return view('Admin.flashdrive',compact('inventory','currentUser','invType'));
+         // $inventoryList = DB::table('inventory')->get();
+
+         $inventory = DB::table('inventory')->select('inventory_id', 'inventory_item','inventory_brand','inventory_model','inventory_socket','cost','inventory_serial_no','inventory_supplier','date_received','inventory_status','inventory_type','created_at','updated_at')->where('inventory_item', '=', $invType)->get();
+
+         return view('Admin.flashdrive',compact('inventory','currentUser'));
     }
 
-    public function delete(Request $request)
-    {
-
-        DB::table('inventory')->where('inventory_id', $request->input('in_id'))->delete();
-        return redirect()->route('posts');
+    public function delete($inventory_id)
+    {   
+        $currentUser = Helper::staticInfo();
+        DB::delete('delete from inventory where inventory_id = ?',[$inventory_id]);
+        return redirect()->back()->withInput();
         
     }
 }

@@ -68,6 +68,7 @@ class InventoryAddController extends Controller
         date_default_timezone_set('Asia/Manila');
         $inventory = new InventoryModel;
         $inventory->inventory_item = $request->input('item');
+        $inventory->inventory_type = $request->input('item');
         $inventory->inventory_brand = $request->input('brand');
         $inventory->inventory_model = $request->input('model');
         $inventory->processor_socket = $request->input('psocket');

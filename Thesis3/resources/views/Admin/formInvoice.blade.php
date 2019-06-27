@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add Replacement</title>
+  <title>Inventory</title>
 
   <link rel="icon" href="../img/favicon.png" type="image/png" sizes="16x16">
 
@@ -54,7 +54,7 @@
 </head>
 <body>
   <div id="wrapper">
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
           <span class="sr-only">Toggle navigation</span>
@@ -70,6 +70,7 @@
         </a>
 
       </div>
+
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
           <li><a href='index'><i class="fa fa-bullseye"></i> Dashboard</a></li>
@@ -87,22 +88,24 @@
                   </div>
               </div>
           </li>
-          <li class='active'><a href='replacement'><i class="fa fa-list-ul"></i> Replacement Forms</a></li>
+          <li><a href='replacement'><i class="fa fa-list-ul"></i> Replacement Forms</a></li>
           <li><a href='suppliers'><i class="fa fa-users"></i> Suppliers</a></li>
           <li><a href='settings'><i class="fa fa-cog" aria-hidden="true"></i></i> Settings</a></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right navbar-user">
           <li class="dropdown messages-dropdown">
+
             <!-- for drop down purposes-->
             <ul class="dropdown-menu">
-
               <li class="message-preview">
                 <a href="#">
                   <span class="avatar"><i class="fa fa-bell"></i></span>
                   <span class="message">Security alert</span>
                 </a>
               </li>
+
+
 
               <li class="divider"></li>
               <li class="message-preview">
@@ -111,12 +114,17 @@
                   <span class="message">Security alert</span>
                 </a>
               </li>
+
+
+
               <li class="divider"></li>
               <li><a href="#">Go to Inbox <span class="badge">2</span></a></li>
             </ul>
           </li>
+
+
           <li class="dropdown user-dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ $currentUser['name']}}<b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ $currentUser['name'] }}</a>
             <ul class="dropdown-menu">
               <li><a href='logout'><i class="fa fa-power-off"></i> Log Out</a></li>
             </ul>
@@ -141,122 +149,107 @@
                           <section class="panel">
                             <header class="panel-heading">
 
-                              <h3>Add to Replacement</h3>
+                              <h3>Add to Inventory</h3>
 
                             </header>
                             <div class="panel-body">
 
-
                               <!--start of forms-->
 
 
-                              <form class="form-horizontal form-bordered" action="/addreplacement" method="POST">
-                               @include('Admin.flash-message')
+                              <form autocomplete="off" class="form-horizontal form-bordered" action='inventoryForm' method="POST">
+                                <div id="app">
 
 
-                               @yield('content')
-
-                               {{csrf_field()}}
+                                  @include('Admin.flash-message')
 
 
+                                  @yield('content')
+                                </div>
 
-                               <!--end of the div-->
-                               <!--start of forms-->
-
-
-                               <!--ending & start-->
-                               <div class="form-group">
-
-                                <label class="col-md-3 control-label" for="inputDefault">SRF#</label>
+                                {{ csrf_field() }}
+                                 <div class="form-group">
+                                <label class="col-md-3 control-label" for="inputDefault">Date</label>
                                 <div class="col-md-3">
-                                  <input name="srf" type="text" class="form-control" id="inputDefault">
+                                  <input type="date" data-plugin-datepicker id="inputDate" class="form-control form-control-user" placeholder="Recieved" name="date" value="{{ old('date') }}">
                                 </div>
                               </div>
                               <!--ending & start-->
 
+                                <div class="form-group">
+                                  <label class="col-md-3 control-label" for="inputDefault">Receipt Number</label>
+                                  <div class="col-md-3">
+                                    <input name="item" type="text" class="form-control" id="inputDefault" value="{{ old('item') }}">
+                                  </div>
+                                </div>
+
+                                <!--end of the div-->
+                                <!--start of forms-->
+
+                                <div class="form-group">
+                                  <label  class="col-md-3 control-label" for="inputDefault">Entity</label>
+                                  <div class="col-md-3">
+                                    <input name="brand" type="text" class="form-control" id="inputDefault" value="{{ old('brand') }}">
+                                  </div>
+                                </div>
+                                <!--ending & start-->
+                                <div class="form-group">
+                                  <label class="col-md-3 control-label" for="inputDefault">Employee Incharge</label>
+                                  <div class="col-md-3">
+                                    <input name="model" type="text" class="form-control" id="inputDefault" value="{{ old('model') }}">
+                                  </div>
+                                </div>
+                                <!--ending & start-->
+
+                                <div class="form-group">
+                                  <label class="col-md-3 control-label" for="inputDefault">Purchase Order</label>
+                                  <div class="col-md-3">
+                                    <input name="psocket" type="text" class="form-control" id="inputDefault" value="{{ old('psocket') }}">
+                                  </div>
+                                </div>
+
+                                <!--ending & start-->
+
+                                <div class="form-group">
+                                  <label class="col-md-3 control-label" for="inputDefault">Description</label>
+                                  <div class="col-md-3">
+                                    <input name="socket" type="text" class="form-control" id="inputDefault" value="{{ old('socket') }}">
+                                  </div>
+                                </div>
+                                
+                                <!--ending & start-->
                               <div class="form-group">
-                                <label class="col-md-3 control-label" for="inputDefault">Credit Note #</label>
+                                <label class="col-md-3 control-label" for="inputDefault">Unit Price</label>
                                 <div class="col-md-3">
-                                  <input name="credit" type="text" class="form-control" id="inputDefault">
+                                  <input name="inventory_serial_no" type="text" class="form-control" id="inputDefault">
                                 </div>
                               </div>
-                              <!--ending & start-->
-                              <div class="form-group">
-                                <label class="col-md-3 control-label" for="inputDefault">Item</label>
-                                <div class="col-md-3">
-                                  <input name="item" type="text" class="form-control" id="inputDefault">
+
+                                <!--ending & start-->
+                                <div class="form-group">
+                                  <label  class="col-md-3 control-label" for="inputDefault">Quantity</label>
+                                  <div class="col-md-3">
+                                    <input name="cost" type="text" class="form-control" id="inputDefault" value="{{ old('cost') }}">
+                                  </div>
                                 </div>
-                              </div>
-                              <!--ending & start-->
-                              <div class="form-group">
-                                <label class="col-md-3 control-label" for="inputDefault">Brand</label>
-                                <div class="col-md-3">
-                                  <input name="brand" type="text" class="form-control" id="inputDefault">
-                                </div>
-                              </div>
-                              <!--ending & start-->
-                              <div class="form-group">
-                                <label class="col-md-3 control-label" for="inputDefault">Qty</label>
-                                <div class="col-md-3">
-                                  <input name="quantity" type="text" class="form-control" id="inputDefault">
-                                </div>
-                              </div>
-                              <!--ending & start-->
-                              <div class="form-group">
-                                <label class="col-md-3 control-label" for="inputDefault">Description</label>
-                                <div class="col-md-3">
-                                  <input name="description" type="text" class="form-control" id="inputDefault">
-                                </div>
-                              </div>
-                              <!--ending & start-->
-                              <div class="form-group">
-                                <label class="col-md-3 control-label" for="inputDefault">Price</label>
-                                <div class="col-md-3">
-                                  <input name="quantity" type="text" class="form-control" id="inputDefault">
-                                </div>
-                              </div>
-                              <!--ending & start-->
-                              <div class="form-group">
-                                <label class="col-md-3 control-label" for="inputDefault">Supplier's Name</label>
-                                <div class="col-md-3">
-                                  <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option selected>Choose...</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <!--ending & start-->
-                              <div class="form-group">
-                                <label class="col-md-3 control-label" for="inputDefault">Date Received</label>
-                                <div class="col-md-3">
-                                  <input type="date" data-plugin-datepicker id="inputDate" class="form-control form-control-user" placeholder="Birthday" name="birthday" value="{{ old('birthday') }}">
-                                </div>
-                              </div>
-                              <!--ending & start-->
+                    
+                              
+
 
                               <div class="text-right">
                                 <input type ="submit" class="btn btn-primary btn-user" value ="Add">
-                                <a href='replacement' class="btn btn-success btn-user ">Done</a>
+                                <a href='inventoryForm' class="btn btn-warning">New</a>
+                                <a href='posts' class="btn btn-success btn-user ">Done</a>
                               </div>
 
 
 
-
+                              <!--ending & start-->
                             </form>
-
-
-
 
                           </div>
 
-
                         </div>
-
-
-
-
-
-
 
 
                       </div>

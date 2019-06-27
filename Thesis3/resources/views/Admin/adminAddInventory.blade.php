@@ -51,7 +51,7 @@
   <script src="assets/javascripts/tables/examples.datatables.tabletools.js"></script>
 
   <script type="text/javascript" src="js/date_time.js"></script>
-</head>
+</head>  
 <body>
   <div id="wrapper">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -83,7 +83,7 @@
               </a>
               <div id="collapseOrders" class="collapse" aria-labelledby="headingOrders" data-parent="#accordionSidebar">
                   <div>
-                      <div><a class="collapse-item btn" href='/orders'>Charge Invoice</a></div>
+                      <div><a class="collapse-item btn" href='/chargeInv'>Charge Invoice</a></div>
                       <div><a class="collapse-item btn" href='/ordersreq'>Cash Invoice</a></div>
                   </div>
               </div>
@@ -197,7 +197,7 @@
                                 <div class="form-group">
                                   <label class="col-md-3 control-label" for="inputDefault">Processor Socket</label>
                                   <div class="col-md-3">
-                                    <input name="psocket" type="text" class="form-control" id="inputDefault" value="{{ old('processorSocket') }}">
+                                    <input name="psocket" type="text" class="form-control" id="inputDefault" value="{{ old('psocket') }}">
                                   </div>
                                 </div>
 
@@ -234,7 +234,7 @@
                               <div class="form-group">
                                 <label class="col-md-3 control-label" for="inputDefault">Recieved Date</label>
                                 <div class="col-md-3">
-                                  <input type="date" data-plugin-datepicker id="inputDate" class="form-control form-control-user" placeholder="Birthday" name="birthday" value="{{ old('birthday') }}">
+                                  <input type="date" data-plugin-datepicker id="inputDate" class="form-control form-control-user" placeholder="Recieved" name="date" value="{{ old('date') }}">
                                 </div>
                               </div>
                               <!--ending & start-->

@@ -19,7 +19,7 @@ class InventoryAdminController extends Controller
         // $posts = DB::select('SELECT DISTINCT inventory_item, inventory_brand, inventory_description, inventory_supplier, date_received FROM inventory')->distinct()->get();
         // $posts = DB::select('');
         $currentUser = Helper::staticInfo();
-        $posts = $users = DB::table('inventory')
+        $posts =  DB::table('inventory')
             ->select('inventory_id','inventory_item','inventory_brand','inventory_socket', 'inventory_supplier', 'date_received',\DB::raw('COUNT(inventory_item)as count'))
             ->groupBy('inventory_item')
             ->where('inventory_status', '=', 'Available')

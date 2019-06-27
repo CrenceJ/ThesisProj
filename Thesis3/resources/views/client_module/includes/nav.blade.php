@@ -14,13 +14,6 @@
     </a>
 </li>
 
-<!-- Nav Item - Sales -->
-<li class="nav-item">
-    <a class="nav-link" href="/sales">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Sales</span>
-    </a>
-</li>
 
 <!-- Nav Item - Inventory -->
 <li class="nav-item">
@@ -30,19 +23,6 @@
     </a>
 </li>
 
-<!-- Nav Item -Orders -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOrders" aria-expanded="true" aria-controls="collapseOrders">
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Orders</span>
-    </a>
-    <div id="collapseOrders" class="collapse" aria-labelledby="headingOrders" data-parent="#accordionSidebar">
-        <div class="bg-transparent py-2 collapse-inner rounded">
-            <a class="collapse-item" href='/orders'>System Orders</a>
-            <a class="collapse-item" href='/ordersreq'>Requested Orders</a>
-        </div>
-    </div>
-</li>
 
 <!-- Nav Item - Purchase Parts -->
 <li class="nav-item">

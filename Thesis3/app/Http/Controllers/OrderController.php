@@ -7,6 +7,7 @@ use App\ClientsModel;
 use App\OrdersModel;
 use App\OrderDetailsModel;
 use App\SalesModel;
+use App\CustomizeModel;
 
 use Auth;
 use Carbon\Carbon;
@@ -37,9 +38,21 @@ class OrderController extends Controller
     public function customIndex()
     {
         $currentUser = Helper::staticInfo();
-        $inventories = $this->inventoryByCategory();
+        $inventories =  DB::table('inventory')
+            ->select('inventory_id', 'inventory_item', 'inventory_type', 'processor_socket', 'inventory_socket')
+            ->groupBy('inventory_item')
+            ->where('inventory_status', '=', 'Available')
+            ->get();
 
         return view('client_module.customize', compact('currentUser', 'inventories'));
+    }
+    public function getMemory()
+    {
+        // Fetch Employees by Departmentid
+     $userData['data'] = Page::getdepartmentEmployee($inventory_id);
+
+     echo json_encode($userData);
+     exit;
     }
 
     //display pc build summary

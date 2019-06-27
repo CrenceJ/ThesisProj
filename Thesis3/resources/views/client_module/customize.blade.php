@@ -76,20 +76,7 @@
         <ul class="nav navbar-nav side-nav">
           <li><a href="/service_engineer"><i class="fa fa-bullseye"></i> Dashboard</a></li>
           <li><a href='myservices'><i class="fa fa-tasks"></i> Services</a></li>
-          <li><a href='sales'><i class="fa fa-globe"></i> Sales</a></li>
           <li><a href='inventory'><i class="fa fa-list-ul"></i> Inventory</a></li>
-          <li class="nav-item">
-            <a class="nav-link collapse fa fa-list-ul" href="#" data-toggle="collapse" data-target="#collapseOrders" aria-expanded="true" aria-controls="collapseOrders">
-              <i class=""></i>
-              <span>Orders</span>
-            </a>
-            <div id="collapseOrders" class="collapse" aria-labelledby="headingOrders" data-parent="#accordionSidebar">
-              <div>
-                <div class="active"><a class="collapse-item btn" href='/orders'>System Orders</a></div>
-                <div><a class="collapse-item btn" href='/ordersreq'>Requested Orders</a></div>
-              </div>
-            </div>
-          </li>
 
 
           <li class="active"><a href='/customize?order_type=pc'><i class="fa fa-list-ul"></i> Build A PC</a></li>
@@ -205,7 +192,7 @@
                   <form role="form">
                     <div class="form-group">
                       <label><strong>OR Number</strong></label>
-                      <input class="form-control">
+                      <input class="form-control" placeholder="0000">
                     </div>
                   </form>
                 </div>
@@ -216,7 +203,7 @@
                   <form role="form">
                     <div class="form-group">
                       <label><strong>Phone</strong></label>
-                      <input name="contact" type="number" id="phone" data-plugin-maxlength maxlength="11"  placeholder="09532454000" class="form-control">
+                      <input name="contact" type="number" id="phone" data-plugin-maxlength maxlength="11"  placeholder="09123456789" class="form-control">
                     </div>
                   </form>
                 </div>
@@ -228,7 +215,7 @@
                   <form role="form">
                     <div class="form-group">
                       <label><strong>First Name</strong></label>
-                      <input type="text" name="fname" class="form-control" id="inputFirstname" placeholder="First name" required>
+                      <input type="text" name="fname" class="form-control" id="inputFirstname" placeholder="Juan" required>
                     </div>
                   </form>
                 </div>
@@ -241,58 +228,57 @@
                   <form role="form">
                     <div class="form-group">
                       <label><strong>Last Name</strong></label>
-                      <input type="text" name="lname" class="form-control" id="inputLastname" placeholder="Last name" required>
+                      <input type="text" name="lname" class="form-control" id="inputLastname" placeholder="Dela Cruz" required>
                     </div>
                   </form>
                 </div>
               </div>
 
+
               <div class="col-lg-12">
+                <br>
                 <div class="panel panel-primary">
                   <div class="panel-heading">
                     <h3 class="panel-title">CHOOSE YOUR CORE COMPONENTS</h3>
                   </div>
                   <div class="panel-body">
-                    <div class="form-group col-md-12">
-                      <label for="inputState"><strong>Processor (CPU)</strong></label>
-                      <br>
-                      <select id="inputState" class="form-control">
-                        <option selected>Celeron G4900</option>
-                        <option selected>Core i3-8100</option>
-                        <option selected>Core i3-8350K</option>
-                        <option selected>Core i3-900F</option>
-                        <option selected>Core i5-8400</option>
-                        <option selected>Core i5-9400</option>
-                        <option selected>Core i7-8700</option>
-                        <option selected>Pentium G5400</option>
-                        <option selected>Choose...</option>
-                      </select>
-
-                    </div>
 
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Motherboard</strong></label>
                       <br>
-                      <select id="inputState" class="form-control">
-                        <option selected>Asrock Fatality B360 Gaming K4</option>
-                        <option selected>Gigabyte H81M-DS2</option>
-                        <option selected>Asrock H81 Pro BTX R2</option>
-                        <option selected>LGA 1151v3</option>
-                        <option selected>AM4</option>
-                        <option selected>FM2+</option>
-                        <option selected>TR4</option>
-                        <option selected>LGA 2066</option>
+                      <select id="inputState" class="form-control" name="motherboard">
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'Motherboard')
+                        <option selected value='{{$inv->inventory_id}}'>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
+                        <option selected value="0">Choose...</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                      <label for="inputState"><strong>Processor (CPU)</strong></label>
+                      <br>
+                      <select id="inputState" class="form-control" name="processor">
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'CPU')
+                        <option selected value='{{$inv->inventory_id}}'>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
                       </select>
+
                     </div>
 
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Memory (RAM)</strong></label>
                       <br>
                       <select id="inputState" class="form-control">
-                        <option selected>DDR3</option>
-                        <option selected>DDR4</option>
-                        <option selected>DDR5</option>
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'RAM')
+                        <option selected value='{{$inv->inventory_id}}'>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
                       </select>
                     </div>
@@ -301,8 +287,11 @@
                       <label for="inputState"><strong>Graphics/ Video Card</strong></label>
                       <br>
                       <select id="inputState" class="form-control">
-                        <option selected>AMD</option>
-                        <option selected>Nvidia</option>
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'GPU')
+                        <option selected>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
                       </select>
                     </div>
@@ -322,6 +311,11 @@
                       <label for="inputState"><strong>Operating System</strong></label>
                       <br>
                       <select id="inputState" class="form-control">
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'OS')
+                        <option selected>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
                       </select>
                     </div>
@@ -329,6 +323,11 @@
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Office Software</strong></label>
                       <select id="inputState" class="form-control">
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'MS')
+                        <option selected>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
                       </select>
                     </div>
@@ -346,7 +345,11 @@
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Power Supply</strong></label>
                       <select id="inputState" class="form-control">
-                        <option selected>None</option>
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'Power Supply')
+                        <option selected>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
                       </select>
                     </div>
@@ -354,6 +357,11 @@
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Processor Cooling</strong></label>
                       <select id="inputState" class="form-control">
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'Processor Cooling')
+                        <option selected>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
                       </select>
                     </div>
@@ -361,8 +369,12 @@
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Extra Case Fan</strong></label>
                       <select id="inputState" class="form-control">
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'Extra Case Fan')
+                        <option selected>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
-                        <option>...</option>
                       </select>
                     </div>
                   </div>
@@ -380,6 +392,11 @@
                       <label for="inputState"><strong>Monitor</strong></label>
                       <select id="inputState" class="form-control">
                         <option selected>None</option>
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'Monitor')
+                        <option selected>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
                       </select>
                     </div>
@@ -387,6 +404,12 @@
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Mouse</strong></label>
                       <select id="inputState" class="form-control">
+                        <option selected>None</option>
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'Mouse')
+                        <option selected>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
                       </select>
                     </div>
@@ -394,8 +417,13 @@
                     <div class="form-group col-md-12">
                       <label for="inputState"><strong>Keyboard</strong></label>
                       <select id="inputState" class="form-control">
+                        <option selected>None</option>
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'Keyboard')
+                        <option selected>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
-                        <option>...</option>
                       </select>
                     </div>
 
@@ -403,6 +431,11 @@
                       <label for="inputState"><strong>Headsets</strong></label>
                       <select id="inputState" class="form-control">
                         <option selected>None</option>
+                        @foreach($inventories as $inv)
+                        @if($inv->inventory_type == 'Headset')
+                        <option selected>{{$inv->inventory_item}}</option>
+                        @endif
+                        @endforeach
                         <option selected>Choose...</option>
                       </select>
                     </div>

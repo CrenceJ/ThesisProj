@@ -55,30 +55,43 @@
 <body>
   <div id="wrapper">
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href='index'>Home</a>
-              <a class="navbar-brand">
-              <span id="date_time"></span>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href='index'>Home</a>
+        <a class="navbar-brand">
+          <span id="date_time"></span>
           <script type="text/javascript">window.onload = date_time('date_time');</script>
-               </a>
-          </div>
-          <div class="collapse navbar-collapse navbar-ex1-collapse">
-              <ul class="nav navbar-nav side-nav">
-                <li><a href='index'><i class="fa fa-bullseye"></i> Dashboard</a></li>
-                <li class="active"><a href='posts'><i class="fa fa-tasks"></i> Inventory</a></li>
-                <li><a href='salesRecord'><i class="fa fa-globe"></i> Sales Records</a></li>
-                <li><a href='replacement'><i class="fa fa-list-ul"></i> Replacement Forms</a></li>
-                <li><a href='settings'><i class="fa fa-list-ul"></i> Settings</a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right navbar-user">
-                  <li class="dropdown messages-dropdown">
-                      <!-- for drop down purposes-->
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav side-nav">
+          <li><a href='index'><i class="fa fa-bullseye"></i> Dashboard</a></li>
+          <li class="services"><a href='allServices'><i class="fa fa-wrench" aria-hidden="true"></i> Services</a></li>
+          <li class="active"><a href='posts'><i class="fa fa-tasks"></i> Inventory</a></li>
+          <li class>
+              <a class="nav-link collapse" href="#" data-toggle="collapse" data-target="#collapseOrders" aria-expanded="true" aria-controls="collapseOrders">
+                  <i class="fa fa-globe"></i>
+                  <span>Sales Records</span>
+              </a>
+              <div id="collapseOrders" class="collapse" aria-labelledby="headingOrders" data-parent="#accordionSidebar">
+                  <div>
+                      <div><a class="collapse-item btn" href='/chargeInv'>Charge Invoice</a></div>
+                      <div><a class="collapse-item btn" href='/ordersreq'>Cash Invoice</a></div>
+                  </div>
+              </div>
+          </li>
+          <li><a href='replacement'><i class="fa fa-list-ul"></i> Replacement Forms</a></li>
+          <li><a href='suppliers'><i class="fa fa-users"></i> Suppliers</a></li>
+          <li><a href='settings'><i class="fa fa-cog" aria-hidden="true"></i></i> Settings</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right navbar-user">
+          <li class="dropdown messages-dropdown">
+            <!-- for drop down purposes-->
             <ul class="dropdown-menu">
               <li class="message-preview">
                 <a href="#">
@@ -114,7 +127,7 @@
         </ul>
       </div>
     </nav>
-        <!-- Dashboard of home pane-->
+    <!-- Dashboard of home pane-->
         <br>
         <div id="page-wrapper">
             <div class="row">
@@ -143,7 +156,6 @@
 
                    <th>Item</th>
                    <th>Brand</th>
-                   <th>Description</th>
                    <th>Stocks on Hand</th>
                    <th>Supplier's Name</th>
                    <th>Date Received</th>
@@ -153,9 +165,8 @@
                 <tbody>
                   @foreach($posts as $post)
                   <tr class="gradeX">   
-                    <td><a href='posts'>{{$post->inventory_item }}</a></td>
+                    <td><a href='{{url("list?type=$post->inventory_item")}}'>{{$post->inventory_item}}</a></td>
                     <td>{{$post -> inventory_brand}}</td>
-                    <td>{{$post -> inventory_description}}</td>
                     <td>{{$post -> count}}</td>
                     <td>{{$post -> inventory_supplier}}</td>
                     <td>{{$post -> date_received}}</td>

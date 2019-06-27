@@ -353,7 +353,7 @@
                     <td class="actions">
                       <form action='disable' method="POST"> 
                         {{ csrf_field()}}
-                        <input name="disable" value="Disabled" class="btn btn-danger btn-xs" type="submit">
+                        <input name="disable" value="Disable" class="btn btn-danger btn-xs" type="submit">
                     </td>
                   </tr>
                   @endforeach

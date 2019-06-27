@@ -94,12 +94,16 @@ Route::group(['middleware' => ['App\Http\Middleware\ServiceEngineerMiddleware']]
     Route::resource('password','PasswordControl')->middleware("auth");
 
 
-    Route::get('/posts', ['as' => 'posts', 'uses' => 'PostController@index'])->middleware("auth");
-    Route::post('/deleteIn', ['as' => 'deleteIn', 'uses' => 'PostController@delete'])->middleware("auth");
+    Route::get('/posts', ['as' => 'posts', 'uses' => 'InventoryAdminController@index'])->middleware("auth");
+
+    Route::get('/list', ['as' => 'posts', 'uses' => 'PostController@index'])->middleware("auth");
+    Route::get('deleteIn/{inventory_id}', ['as' => 'deleteIn', 'uses' => 'PostController@delete'])->middleware("auth");
     Route::get('/settings', ['as' => 'settings', 'uses' => 'UserListController@index'])->middleware("auth");
     Route::post('/disable', ['as' => 'disable', 'uses' => 'DisableController@disable'])->middleware("auth");
     Route::get('/allServices', ['as' => 'allServices', 'uses' => 'AdminServiceController@allServices'])->middleware('auth'); 
     Route::get('/suppliers', ['as' => 'suppliers', 'uses' => 'SupplierController@index'])->middleware("auth");
+    Route::resource('chargeInv','ChargeInvoiceController')->middleware("auth");
+    Route::resource('formInvoice','FormChargeInvoiceController')->middleware("auth");
 
     //Route::post('/deleteUsers', ['as' => 'deleteUsers', 'uses' => 'UserListController@delete'])->middleware("auth");
 // });

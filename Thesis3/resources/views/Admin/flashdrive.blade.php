@@ -74,16 +74,16 @@
           <li class="services"><a href='allServices'><i class="fa fa-wrench" aria-hidden="true"></i> Services</a></li>
           <li class="active"><a href='posts'><i class="fa fa-tasks"></i> Inventory</a></li>
           <li class>
-              <a class="nav-link collapse" href="#" data-toggle="collapse" data-target="#collapseOrders" aria-expanded="true" aria-controls="collapseOrders">
-                  <i class="fa fa-globe"></i>
-                  <span>Sales Records</span>
-              </a>
-              <div id="collapseOrders" class="collapse" aria-labelledby="headingOrders" data-parent="#accordionSidebar">
-                  <div>
-                      <div><a class="collapse-item btn" href='/orders'>Charge Invoice</a></div>
-                      <div><a class="collapse-item btn" href='/ordersreq'>Cash Invoice</a></div>
-                  </div>
+            <a class="nav-link collapse" href="#" data-toggle="collapse" data-target="#collapseOrders" aria-expanded="true" aria-controls="collapseOrders">
+              <i class="fa fa-globe"></i>
+              <span>Sales Records</span>
+            </a>
+            <div id="collapseOrders" class="collapse" aria-labelledby="headingOrders" data-parent="#accordionSidebar">
+              <div>
+                <div><a class="collapse-item btn" href='/orders'>Charge Invoice</a></div>
+                <div><a class="collapse-item btn" href='/ordersreq'>Cash Invoice</a></div>
               </div>
+            </div>
           </li>
           <li><a href='replacement'><i class="fa fa-list-ul"></i> Replacement Forms</a></li>
           <li><a href='suppliers'><i class="fa fa-users"></i> Suppliers</a></li>
@@ -156,10 +156,10 @@
                              <th>Item</th>
                              <th>Brand</th>
                              <th>Model</th>
-                             <th>Socket Type</th>
                              <th>Serial Number</th>
                              <th>Cost (₱)</th>
                              <th>Supplier's Name</th>
+                             <th>Status</th>
                              <th>Date Received</th>
                              <th>Actions</th>
 
@@ -171,17 +171,13 @@
                            <td>{{$post -> inventory_item}}</td>
                            <td>{{$post -> inventory_brand}}</td>
                            <td>{{$post -> inventory_model}}</td>
-                           <td>{{$post -> inventory_socket}}</td>
                            <td>{{$post -> inventory_serial_no}}</td>
                            <td>{{$post -> cost}}</td>
                            <td>{{$post -> inventory_supplier}}</td>
+                           <td>{{$post -> inventory_status}}</td>
                            <td>{{$post -> date_received}}</td>
                            <td class="actions">
-                            <form action='/deleteIn' method="POST"> 
-                              {{ csrf_field()}}
-                              <input hidden name="in_id" value="{{$post->inventory_id}}">
-                              <button  class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                            </form>
+                              <a href='deleteIn/{{$post->inventory_id}}' class="btn btn-danger btn-xs" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></a>
                           </td>
                         </tr>
                         @endforeach
